@@ -1,0 +1,5 @@
+D:\WCF\EmployeeManagement\EmployeeWCF\EmployeeWCF\bin\EmployeeWCF.dll
+D:\WCF\EmployeeManagement\EmployeeWCF\EmployeeWCF\bin\EmployeeWCF.pdb
+D:\WCF\EmployeeManagement\EmployeeWCF\EmployeeWCF\obj\Debug\EmployeeWCF.dll
+D:\WCF\EmployeeManagement\EmployeeWCF\EmployeeWCF\obj\Debug\EmployeeWCF.pdb
+D:\WCF\EmployeeManagement\EmployeeWCF\EmployeeWCF\obj\Debug\EmployeeWCF.csprojResolveAssemblyReference.cache
