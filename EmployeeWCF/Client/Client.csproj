@@ -54,6 +54,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Properties\DataSources\EmployeeWCF.Employee.datasource" />
+    <None Include="Service References\ClientService\Client.ClientService.Employee.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ClientService\EmployeeService.wsdl" />
     <None Include="Service References\ClientService\EmployeeService.xsd">
       <SubType>Designer</SubType>
@@ -64,12 +67,6 @@
     <None Include="Service References\ClientService\EmployeeService2.xsd">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EmployeeWCF\EmployeeWCF.csproj">
-      <Project>{720ba347-9b9a-40ce-8f1a-60878c9c30ff}</Project>
-      <Name>EmployeeWCF</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

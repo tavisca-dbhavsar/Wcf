@@ -14,31 +14,39 @@ namespace EmployeeWCF
         public interface IAddandCreate
         {
             [OperationContract]
-            void CreateEmployee(Employee employee);
+            [FaultContract(typeof(FaultExceptionContract))]
+            List<Employee> CreateEmployee(Employee employee);
 
             [OperationContract]
-            void AddRemarksById(int id,string remark);
+            [FaultContract(typeof(FaultExceptionContract))]
+            Employee AddRemarksById(int id,string remark);
             
         }
         [ServiceContract]
         public interface IRetrieve
         {
             [OperationContract]
+            [FaultContract(typeof(FaultExceptionContract))]
             List<Employee> GetAllEmployees();
 
+            [OperationContract]
+            List<Employee> GetAllEmployeesHavingRemark(string remark);
+
             [OperationContract(Name = "SearchById")]
+            [FaultContract(typeof(FaultExceptionContract))]
             Employee GetEmployeeDetails(int id);
 
             [OperationContract(Name = "SearchByName")]
+            [FaultContract(typeof(FaultExceptionContract))]
             List<Employee> GetEmployeeDetails(string name);
-           
+
         }
 
         [DataContract]
         public class Employee
         {
             [DataMember]
-            public int Id;
+            public int Id {get;set;}
 
             [DataMember]
             public string Name { get; set; }
@@ -50,6 +58,6 @@ namespace EmployeeWCF
             public string RemarkText { get; set; }
         }
 
-      
+  
 
 }

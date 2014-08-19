@@ -9,23 +9,197 @@
 //------------------------------------------------------------------------------
 
 namespace Client.ClientService {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Employee", Namespace="http://schemas.datacontract.org/2004/07/EmployeeWCF")]
+    [System.SerializableAttribute()]
+    public partial class Employee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime RemarkDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkTextField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime RemarkDate {
+            get {
+                return this.RemarkDateField;
+            }
+            set {
+                if ((this.RemarkDateField.Equals(value) != true)) {
+                    this.RemarkDateField = value;
+                    this.RaisePropertyChanged("RemarkDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RemarkText {
+            get {
+                return this.RemarkTextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkTextField, value) != true)) {
+                    this.RemarkTextField = value;
+                    this.RaisePropertyChanged("RemarkText");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FaultExceptionContract", Namespace="http://schemas.datacontract.org/2004/07/EmployeeWCF")]
+    [System.SerializableAttribute()]
+    public partial class FaultExceptionContract : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StatusCode {
+            get {
+                return this.StatusCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusCodeField, value) != true)) {
+                    this.StatusCodeField = value;
+                    this.RaisePropertyChanged("StatusCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ClientService.IAddandCreate")]
     public interface IAddandCreate {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddandCreate/CreateEmployee", ReplyAction="http://tempuri.org/IAddandCreate/CreateEmployeeResponse")]
-        void CreateEmployee(EmployeeWCF.Employee employee);
+        [System.ServiceModel.FaultContractAttribute(typeof(Client.ClientService.FaultExceptionContract), Action="http://tempuri.org/IAddandCreate/CreateEmployeeFaultExceptionContractFault", Name="FaultExceptionContract", Namespace="http://schemas.datacontract.org/2004/07/EmployeeWCF")]
+        Client.ClientService.Employee[] CreateEmployee(Client.ClientService.Employee employee);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddandCreate/CreateEmployee", ReplyAction="http://tempuri.org/IAddandCreate/CreateEmployeeResponse")]
-        System.Threading.Tasks.Task CreateEmployeeAsync(EmployeeWCF.Employee employee);
+        System.Threading.Tasks.Task<Client.ClientService.Employee[]> CreateEmployeeAsync(Client.ClientService.Employee employee);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddandCreate/AddRemarksToEmployee", ReplyAction="http://tempuri.org/IAddandCreate/AddRemarksToEmployeeResponse")]
-        void AddRemarksToEmployee();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddandCreate/AddRemarksById", ReplyAction="http://tempuri.org/IAddandCreate/AddRemarksByIdResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Client.ClientService.FaultExceptionContract), Action="http://tempuri.org/IAddandCreate/AddRemarksByIdFaultExceptionContractFault", Name="FaultExceptionContract", Namespace="http://schemas.datacontract.org/2004/07/EmployeeWCF")]
+        Client.ClientService.Employee AddRemarksById(int id, string remark);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddandCreate/AddRemarksToEmployee", ReplyAction="http://tempuri.org/IAddandCreate/AddRemarksToEmployeeResponse")]
-        System.Threading.Tasks.Task AddRemarksToEmployeeAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddandCreate/AddRemarksById", ReplyAction="http://tempuri.org/IAddandCreate/AddRemarksByIdResponse")]
+        System.Threading.Tasks.Task<Client.ClientService.Employee> AddRemarksByIdAsync(int id, string remark);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,20 +229,20 @@ namespace Client.ClientService {
                 base(binding, remoteAddress) {
         }
         
-        public void CreateEmployee(EmployeeWCF.Employee employee) {
-            base.Channel.CreateEmployee(employee);
+        public Client.ClientService.Employee[] CreateEmployee(Client.ClientService.Employee employee) {
+            return base.Channel.CreateEmployee(employee);
         }
         
-        public System.Threading.Tasks.Task CreateEmployeeAsync(EmployeeWCF.Employee employee) {
+        public System.Threading.Tasks.Task<Client.ClientService.Employee[]> CreateEmployeeAsync(Client.ClientService.Employee employee) {
             return base.Channel.CreateEmployeeAsync(employee);
         }
         
-        public void AddRemarksToEmployee() {
-            base.Channel.AddRemarksToEmployee();
+        public Client.ClientService.Employee AddRemarksById(int id, string remark) {
+            return base.Channel.AddRemarksById(id, remark);
         }
         
-        public System.Threading.Tasks.Task AddRemarksToEmployeeAsync() {
-            return base.Channel.AddRemarksToEmployeeAsync();
+        public System.Threading.Tasks.Task<Client.ClientService.Employee> AddRemarksByIdAsync(int id, string remark) {
+            return base.Channel.AddRemarksByIdAsync(id, remark);
         }
     }
     
@@ -77,22 +251,31 @@ namespace Client.ClientService {
     public interface IRetrieve {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetrieve/GetAllEmployees", ReplyAction="http://tempuri.org/IRetrieve/GetAllEmployeesResponse")]
-        EmployeeWCF.Employee[] GetAllEmployees();
+        [System.ServiceModel.FaultContractAttribute(typeof(Client.ClientService.FaultExceptionContract), Action="http://tempuri.org/IRetrieve/GetAllEmployeesFaultExceptionContractFault", Name="FaultExceptionContract", Namespace="http://schemas.datacontract.org/2004/07/EmployeeWCF")]
+        Client.ClientService.Employee[] GetAllEmployees();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetrieve/GetAllEmployees", ReplyAction="http://tempuri.org/IRetrieve/GetAllEmployeesResponse")]
-        System.Threading.Tasks.Task<EmployeeWCF.Employee[]> GetAllEmployeesAsync();
+        System.Threading.Tasks.Task<Client.ClientService.Employee[]> GetAllEmployeesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetrieve/GetAllEmployeesHavingRemark", ReplyAction="http://tempuri.org/IRetrieve/GetAllEmployeesHavingRemarkResponse")]
+        Client.ClientService.Employee[] GetAllEmployeesHavingRemark(string remark);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetrieve/GetAllEmployeesHavingRemark", ReplyAction="http://tempuri.org/IRetrieve/GetAllEmployeesHavingRemarkResponse")]
+        System.Threading.Tasks.Task<Client.ClientService.Employee[]> GetAllEmployeesHavingRemarkAsync(string remark);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetrieve/SearchById", ReplyAction="http://tempuri.org/IRetrieve/SearchByIdResponse")]
-        EmployeeWCF.Employee SearchById(int id);
+        [System.ServiceModel.FaultContractAttribute(typeof(Client.ClientService.FaultExceptionContract), Action="http://tempuri.org/IRetrieve/SearchByIdFaultExceptionContractFault", Name="FaultExceptionContract", Namespace="http://schemas.datacontract.org/2004/07/EmployeeWCF")]
+        Client.ClientService.Employee SearchById(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetrieve/SearchById", ReplyAction="http://tempuri.org/IRetrieve/SearchByIdResponse")]
-        System.Threading.Tasks.Task<EmployeeWCF.Employee> SearchByIdAsync(int id);
+        System.Threading.Tasks.Task<Client.ClientService.Employee> SearchByIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetrieve/SearchByName", ReplyAction="http://tempuri.org/IRetrieve/SearchByNameResponse")]
-        EmployeeWCF.Employee[] SearchByName(string name);
+        [System.ServiceModel.FaultContractAttribute(typeof(Client.ClientService.FaultExceptionContract), Action="http://tempuri.org/IRetrieve/SearchByNameFaultExceptionContractFault", Name="FaultExceptionContract", Namespace="http://schemas.datacontract.org/2004/07/EmployeeWCF")]
+        Client.ClientService.Employee[] SearchByName(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetrieve/SearchByName", ReplyAction="http://tempuri.org/IRetrieve/SearchByNameResponse")]
-        System.Threading.Tasks.Task<EmployeeWCF.Employee[]> SearchByNameAsync(string name);
+        System.Threading.Tasks.Task<Client.ClientService.Employee[]> SearchByNameAsync(string name);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -122,27 +305,35 @@ namespace Client.ClientService {
                 base(binding, remoteAddress) {
         }
         
-        public EmployeeWCF.Employee[] GetAllEmployees() {
+        public Client.ClientService.Employee[] GetAllEmployees() {
             return base.Channel.GetAllEmployees();
         }
         
-        public System.Threading.Tasks.Task<EmployeeWCF.Employee[]> GetAllEmployeesAsync() {
+        public System.Threading.Tasks.Task<Client.ClientService.Employee[]> GetAllEmployeesAsync() {
             return base.Channel.GetAllEmployeesAsync();
         }
         
-        public EmployeeWCF.Employee SearchById(int id) {
+        public Client.ClientService.Employee[] GetAllEmployeesHavingRemark(string remark) {
+            return base.Channel.GetAllEmployeesHavingRemark(remark);
+        }
+        
+        public System.Threading.Tasks.Task<Client.ClientService.Employee[]> GetAllEmployeesHavingRemarkAsync(string remark) {
+            return base.Channel.GetAllEmployeesHavingRemarkAsync(remark);
+        }
+        
+        public Client.ClientService.Employee SearchById(int id) {
             return base.Channel.SearchById(id);
         }
         
-        public System.Threading.Tasks.Task<EmployeeWCF.Employee> SearchByIdAsync(int id) {
+        public System.Threading.Tasks.Task<Client.ClientService.Employee> SearchByIdAsync(int id) {
             return base.Channel.SearchByIdAsync(id);
         }
         
-        public EmployeeWCF.Employee[] SearchByName(string name) {
+        public Client.ClientService.Employee[] SearchByName(string name) {
             return base.Channel.SearchByName(name);
         }
         
-        public System.Threading.Tasks.Task<EmployeeWCF.Employee[]> SearchByNameAsync(string name) {
+        public System.Threading.Tasks.Task<Client.ClientService.Employee[]> SearchByNameAsync(string name) {
             return base.Channel.SearchByNameAsync(name);
         }
     }

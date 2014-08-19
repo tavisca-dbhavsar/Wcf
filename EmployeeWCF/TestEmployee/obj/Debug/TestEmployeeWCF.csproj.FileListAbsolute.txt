@@ -1,0 +1,10 @@
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployee\bin\Debug\TestEmployee.dll
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployee\bin\Debug\TestEmployee.pdb
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployee\bin\Debug\EmployeeWCF.dll
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployee\bin\Debug\EmployeeWCF.pdb
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployee\obj\Debug\TestEmployeeWCF.csprojResolveAssemblyReference.cache
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployee\obj\Debug\TestEmployee.dll
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployee\obj\Debug\TestEmployee.pdb
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployee\bin\Debug\Web.config
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployee\bin\Debug\Web.Debug.config
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployee\bin\Debug\Web.Release.config

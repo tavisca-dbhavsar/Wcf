@@ -6,3 +6,9 @@ D:\WCF\EmployeeManagement\EmployeeWCF\Client\bin\Debug\EmployeeWCF.pdb
 D:\WCF\EmployeeManagement\EmployeeWCF\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
 D:\WCF\EmployeeManagement\EmployeeWCF\Client\obj\Debug\Client.exe
 D:\WCF\EmployeeManagement\EmployeeWCF\Client\obj\Debug\Client.pdb
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\Client\bin\Debug\Client.exe.config
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\Client\obj\Debug\Client.exe
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\Client\obj\Debug\Client.pdb
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\Client\bin\Debug\Client.exe
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\Client\bin\Debug\Client.pdb
