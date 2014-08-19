@@ -12,41 +12,76 @@ namespace TestEmployeeService
     [TestClass]
     public class TestFixture
     {
+
+       private TestContext testContextInstance;
+
+        public TestContext TestContext
+        {
+            get { return testContextInstance; }
+            set { testContextInstance = value; }
+        }
+
         Employee employee = new Employee();
             
         AddandCreateClient employeeCreateObject = new AddandCreateClient("BasicHttpBinding_IAddandCreate");
         RetrieveClient employeeRetrieveObject = new RetrieveClient("WSHttpBinding_IRetrieve");
 
         [TestMethod]
+        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
+                   @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
+                   "Employee",
+                    DataAccessMethod.Sequential)]
+
         public void AddEmployee()
         {
-           
-            employee.Id = 1;
-            employee.Name = "abc";
-            employee.RemarkText = "Hi";
-            employee.RemarkDate = Convert.ToDateTime("2 / 2 / 14");
+            employee.Id = Int32.Parse(testContextInstance.DataRow["EmployeeId"].ToString());
+            employee.Name = testContextInstance.DataRow["EmployeeName"].ToString();
+            employee.RemarkText = testContextInstance.DataRow["EmployeeRemark"].ToString();
+            employee.RemarkDate = Convert.ToDateTime(testContextInstance.DataRow["EmployeeRemarkDate"].ToString());
             List<Employee> employeeList = new List<Employee>();
             employeeList.AddRange(employeeCreateObject.CreateEmployee(employee));
             Assert.AreEqual(employeeList[0].Id, 1);
         }
 
         [TestMethod]
+
         [ExpectedException(typeof(FaultException<FaultExceptionContract>))]
+
+        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
+                   @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
+                   "Employee",
+                    DataAccessMethod.Sequential)]
         public void AddEmployeeAgain()
         {
             
-            employee.Id = 1;
-            employee.Name = "xyz";
-            employee.RemarkText = "Hello";
-            employee.RemarkDate = Convert.ToDateTime("2 / 2 / 14");
-            employeeCreateObject.CreateEmployee(employee);
+            //employee.Id = 1;
+            //employee.Name = "xyz";
+            //employee.RemarkText = "Hello";
+            //employee.RemarkDate = Convert.ToDateTime("2 / 2 / 14");
+            //employeeCreateObject.CreateEmployee(employee);
            
-            Employee newEmployee = new Employee();
-            newEmployee.Id = 1;
-            newEmployee.Name = "xyz";
-            newEmployee.RemarkText = "Hello";
-            newEmployee.RemarkDate = Convert.ToDateTime("2 / 2 / 14");
-            employeeCreateObject.CreateEmployee(newEmployee);
+            //Employee newEmployee = new Employee();
+            //newEmployee.Id = 1;
+            //newEmployee.Name = "xyz";
+            //newEmployee.RemarkText = "Hello";
+            //newEmployee.RemarkDate = Convert.ToDateTime("2 / 2 / 14");
+            //employeeCreateObject.CreateEmployee(newEmployee);
+
+            employee.Id = Int32.Parse(testContextInstance.DataRow["EmployeeId"].ToString());
+            employee.Name = testContextInstance.DataRow["EmployeeName"].ToString();
+            employee.RemarkText = testContextInstance.DataRow["EmployeeRemark"].ToString();
+            employee.RemarkDate = Convert.ToDateTime(testContextInstance.DataRow["EmployeeRemarkDate"].ToString());
+            List<Employee> employeeList = new List<Employee>();
+            employeeList.AddRange(employeeCreateObject.CreateEmployee(employee));
+
+            employee.Id = Int32.Parse(testContextInstance.DataRow["EmployeeId"].ToString());
+            employee.Name = testContextInstance.DataRow["EmployeeName"].ToString();
+            employee.RemarkText = testContextInstance.DataRow["EmployeeRemark"].ToString();
+            employee.RemarkDate = Convert.ToDateTime(testContextInstance.DataRow["EmployeeRemarkDate"].ToString());
+            List<Employee> newEmployeeList = new List<Employee>();
+            newEmployeeList.AddRange(employeeCreateObject.CreateEmployee(employee));
            
         }
 
@@ -58,7 +93,7 @@ namespace TestEmployeeService
             employee.RemarkText = "Hello";
             employee.RemarkDate = Convert.ToDateTime("2 / 2 / 14");
             employeeCreateObject.CreateEmployee(employee);
-            Employee employeeDetail = employeeCreateObject.AddRemarksById(1, "bye");
+            Employee employeeDetail = employeeCreateObject.AddRemarksById(2, "bye");
             Assert.AreEqual(employeeDetail.RemarkText, "bye");
         }
 
@@ -138,7 +173,7 @@ namespace TestEmployeeService
 
         [TestMethod]
         [ExpectedException(typeof(FaultException<FaultExceptionContract>))]
-        public void RetrieveNonEmployeeByName()
+        public void RetrieveNonExistingEmployeeByName()
         {
            
             employee.Id = 6;
@@ -153,7 +188,7 @@ namespace TestEmployeeService
         }
 
        [TestMethod]
-       public void EmployeesHavingRemarkTest()
+       public void EmployeesHavingRemark()
        {
            
            employee.Id = 7;
@@ -182,20 +217,6 @@ namespace TestEmployeeService
            Assert.AreEqual(employeeList[0].RemarkText, "");
        }
 
-   /*    [TestMethod]
-       [ExpectedException(typeof(FaultException<FaultExceptionContract>))]
-       public void CheckIfNameIsNull()
-       {
-           employee.Id = 9;
-           employee.Name = "";
-           employee.RemarkText = "";
-           employee.RemarkDate = Convert.ToDateTime("2 / 2 / 14");
-           employeeCreateObject.CreateEmployee(employee);
-
-           List<Employee> employeeList = new List<Employee>();
-           employeeList.AddRange(employeeCreateObject.CreateEmployee(employee));
-           Assert.AreEqual(employeeList[0].Name, "");
-          
-       }*/
+ 
     }
 }

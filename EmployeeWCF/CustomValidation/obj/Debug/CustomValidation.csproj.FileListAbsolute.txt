@@ -1,0 +1,4 @@
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\CustomValidation\bin\Debug\CustomValidation.dll
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\CustomValidation\bin\Debug\CustomValidation.pdb
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\CustomValidation\obj\Debug\CustomValidation.dll
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\CustomValidation\obj\Debug\CustomValidation.pdb

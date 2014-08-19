@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CustomValidation">
+      <HintPath>..\CustomValidation\bin\Debug\CustomValidation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -65,7 +68,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomException\EmployeeAlreadyExist.cs" />
     <Compile Include="EmployeeService.svc.cs">
       <DependentUpon>EmployeeService.svc</DependentUpon>
     </Compile>
