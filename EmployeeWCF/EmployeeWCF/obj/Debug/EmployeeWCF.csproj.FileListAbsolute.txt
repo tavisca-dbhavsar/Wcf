@@ -8,8 +8,8 @@ D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\EmployeeWCF\bin\Web.Debug.config
 D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\EmployeeWCF\bin\Web.Release.config
 D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\EmployeeWCF\bin\EmployeeWCF.dll
 D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\EmployeeWCF\bin\EmployeeWCF.pdb
-D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\EmployeeWCF\obj\Debug\EmployeeWCF.dll
-D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\EmployeeWCF\obj\Debug\EmployeeWCF.pdb
 D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\EmployeeWCF\bin\CustomValidation.dll
 D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\EmployeeWCF\bin\CustomValidation.pdb
 D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\EmployeeWCF\obj\Debug\EmployeeWCF.csprojResolveAssemblyReference.cache
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\EmployeeWCF\obj\Debug\EmployeeWCF.dll
+D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\EmployeeWCF\obj\Debug\EmployeeWCF.pdb

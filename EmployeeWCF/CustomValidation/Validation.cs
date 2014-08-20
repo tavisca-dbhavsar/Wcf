@@ -40,13 +40,13 @@ namespace CustomValidation
             }
             else if (operationName == "AddRemarksById")
             {
-                Regex MyRegex = new Regex("^[a-zA-Z ]+$");
+                Regex Regex = new Regex("^[a-zA-Z ]+$");
 
                 if ((int)inputs[0] < 0)
                 {
                     throw new FaultException("Id invalid");
                 }
-                if (MyRegex.IsMatch(inputs[1].ToString()))
+                if (Regex.IsMatch(inputs[1].ToString()))
                 {
                     return inputs;
                 }
@@ -67,8 +67,8 @@ namespace CustomValidation
             }
             else if (operationName == "SearchByName")
             {
-                Regex MyRegex = new Regex("^[a-zA-Z ]+$");
-                if (MyRegex.IsMatch(inputs[0].ToString()))
+                Regex Regex = new Regex("^[a-zA-Z ]+$");
+                if (Regex.IsMatch(inputs[0].ToString()))
                 {
                     return inputs;
                 }
@@ -80,8 +80,8 @@ namespace CustomValidation
             }
             else if (operationName == "GetAllEmployeesHavingRemark")
             {
-                Regex MyRegex = new Regex("^[a-zA-Z ]+$");
-                if (MyRegex.IsMatch(inputs[0].ToString()))
+                Regex Regex = new Regex("^[a-zA-Z ]+$");
+                if (Regex.IsMatch(inputs[0].ToString()))
                 {
                     return inputs;
                 }
@@ -113,9 +113,7 @@ namespace CustomValidation
         public void AddBindingParameters(ServiceEndpoint serviceEndpoint, System.ServiceModel.Channels.BindingParameterCollection bindingParameters)
         { }
 
-        public void ApplyClientBehavior(
-          ServiceEndpoint endpoint,
-          ClientRuntime clientRuntime)
+        public void ApplyClientBehavior( ServiceEndpoint endpoint,ClientRuntime clientRuntime)
         {
             //If enable is not true in the config we do not apply the Parameter Inspector
             if (false == this.enabled)
