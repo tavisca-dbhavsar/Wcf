@@ -27,10 +27,9 @@ namespace TestEmployeeService
         RetrieveClient employeeRetrieveObject = new RetrieveClient("WSHttpBinding_IRetrieve");
 
         [TestMethod]
-        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DeploymentItem(@"EmployeeXmlData.xml")]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-                   @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
-                   "Employee", DataAccessMethod.Sequential)]
+                   @"EmployeeXmlData.xml","Employee", DataAccessMethod.Sequential)]
 
         public void AddEmployee()
         {
@@ -47,10 +46,9 @@ namespace TestEmployeeService
 
         [ExpectedException(typeof(FaultException<FaultExceptionContract>))]
 
-        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DeploymentItem(@"EmployeeXmlData.xml")]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-                   @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
-                   "Employee", DataAccessMethod.Sequential)]
+                   @"EmployeeXmlData.xml","Employee", DataAccessMethod.Sequential)]
         public void AddEmployeeAgain()
         {
 
@@ -71,10 +69,9 @@ namespace TestEmployeeService
         }
 
         [TestMethod]
-        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DeploymentItem(@"EmployeeXmlData.xml")]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-                   @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
-                   "AddRemarkToEmployee", DataAccessMethod.Sequential)]
+                   @"EmployeeXmlData.xml","AddRemarkToEmployee", DataAccessMethod.Sequential)]
         public void AddRemarkToExistingEmployee()
         {
             employee.Id = Int32.Parse(testContextInstance.DataRow["EmployeeId"].ToString());
@@ -87,9 +84,9 @@ namespace TestEmployeeService
         }
 
         [TestMethod]
-        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DeploymentItem(@"EmployeeXmlData.xml")]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-                   @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
+                   @"EmployeeXmlData.xml",
                    "AddRemarkToNonExistingId", DataAccessMethod.Sequential)]
         [ExpectedException(typeof(FaultException<FaultExceptionContract>))]
         public void AddRemarkToNonExistingId()
@@ -105,9 +102,9 @@ namespace TestEmployeeService
         }
 
         [TestMethod]
-        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DeploymentItem(@"EmployeeXmlData.xml")]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-                    @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
+                    @"EmployeeXmlData.xml",
                     "RetrieveEmployees", DataAccessMethod.Sequential)]
         public void RetrieveEmployees()
         {
@@ -121,9 +118,9 @@ namespace TestEmployeeService
         }
 
         [TestMethod]
-        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DeploymentItem(@"EmployeeXmlData.xml")]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-                    @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
+                    @"EmployeeXmlData.xml",
                     "RetrieveEmployeeById", DataAccessMethod.Sequential)]
         public void RetrieveEmployeeById()
         {
@@ -139,9 +136,9 @@ namespace TestEmployeeService
         }
 
         [TestMethod]
-        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DeploymentItem(@"EmployeeXmlData.xml")]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-                    @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
+                    @"EmployeeXmlData.xml",
                     "RetrieveNonExistingEmployeeId", DataAccessMethod.Sequential)]
         [ExpectedException(typeof(FaultException<FaultExceptionContract>))]
         public void RetrieveNonExistingEmployeeId()
@@ -159,9 +156,9 @@ namespace TestEmployeeService
 
 
         [TestMethod]
-        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DeploymentItem(@"EmployeeXmlData.xml")]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-                    @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
+                    @"EmployeeXmlData.xml",
                     "RetrieveEmployeeByName", DataAccessMethod.Sequential)]
         public void RetrieveEmployeeByName()
         {
@@ -179,9 +176,9 @@ namespace TestEmployeeService
         }
 
         [TestMethod]
-        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DeploymentItem(@"EmployeeXmlData.xml")]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-                    @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
+                    @"EmployeeXmlData.xml",
                     "RetrieveNonExistingEmployeeByName", DataAccessMethod.Sequential)]
         [ExpectedException(typeof(FaultException<FaultExceptionContract>))]
         public void RetrieveNonExistingEmployeeByName()
@@ -199,9 +196,9 @@ namespace TestEmployeeService
         }
 
         [TestMethod]
-        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DeploymentItem(@"EmployeeXmlData.xml")]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-                    @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
+                    @"EmployeeXmlData.xml",
                     "EmployeesHavingRemark", DataAccessMethod.Sequential)]
         public void EmployeesHavingRemark()
         {
@@ -233,9 +230,9 @@ namespace TestEmployeeService
         }*/
 
         [TestMethod]
-        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DeploymentItem(@"EmployeeXmlData.xml")]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-                    @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
+                    @"EmployeeXmlData.xml",
                     "ValidateInvalidIdInAddRemarksById", DataAccessMethod.Sequential)]
 
         [ExpectedException(typeof(FaultException))]
@@ -251,9 +248,9 @@ namespace TestEmployeeService
         }
 
         [TestMethod]
-        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DeploymentItem(@"EmployeeXmlData.xml")]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-                    @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
+                    @"EmployeeXmlData.xml",
                     "ValidateInvalidRemarkNameInAddRemarksById", DataAccessMethod.Sequential)]
 
         [ExpectedException(typeof(FaultException))]
@@ -269,9 +266,9 @@ namespace TestEmployeeService
         }
 
         [TestMethod]
-        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DeploymentItem(@"EmployeeXmlData.xml")]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-                    @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
+                    @"EmployeeXmlData.xml",
                     "ValidateRetrieveNonExistingEmployeeName", DataAccessMethod.Sequential)]
 
         [ExpectedException(typeof(FaultException))]
@@ -290,9 +287,9 @@ namespace TestEmployeeService
         }
 
         [TestMethod]
-        [DeploymentItem(@"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml")]
+        [DeploymentItem(@"EmployeeXmlData.xml")]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
-                    @"D:\WCF\EmployeeManagement\Wcf\EmployeeWCF\TestEmployeeService\EmployeeXmlData.xml",
+                    @"EmployeeXmlData.xml",
                     "ValidateEmployeesHavingRemark", DataAccessMethod.Sequential)]
 
 
