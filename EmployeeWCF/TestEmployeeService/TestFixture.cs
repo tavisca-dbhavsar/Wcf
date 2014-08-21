@@ -64,7 +64,14 @@ namespace TestEmployeeService
             employee.RemarkText = testContextInstance.DataRow["EmployeeRemark"].ToString();
             employee.RemarkDate = Convert.ToDateTime(testContextInstance.DataRow["EmployeeRemarkDate"].ToString());
             List<Employee> newEmployeeList = new List<Employee>();
-            newEmployeeList.AddRange(employeeCreateObject.CreateEmployee(employee));
+            try
+            {
+                newEmployeeList.AddRange(employeeCreateObject.CreateEmployee(employee));
+            }
+            catch (FaultException<FaultExceptionContract>e)
+            {
+                Assert.AreEqual(e.Detail.Message, "Employee with Id " + employee.Id + " already exists");
+            }
 
         }
 

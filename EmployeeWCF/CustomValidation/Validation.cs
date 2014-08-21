@@ -23,22 +23,7 @@ namespace CustomValidation
         public object BeforeCall(string operationName, object[] inputs)
         {
 
-            if (operationName == "CreateEmployee")
-            {
-                
-                for (int index = 0; index < inputs.Length; index++)
-                {
-                    //if (index == 0)
-                    //{
-                    //    if (((int)inputs[index] < 0) || ((int)inputs[index] > 5))
-                    //        throw new FaultException("Validation Input  Error");
-                    //}
-                   // if(inputs[ind)
-
-                }
-
-            }
-            else if (operationName == "AddRemarksById")
+            if (operationName == "AddRemarksById")
             {
                 Regex Regex = new Regex("^[a-zA-Z ]+$");
 
